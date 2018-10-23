@@ -1,0 +1,19 @@
+{
+  "name": "ip-finance",
+  "version": "1.0.0",
+  "description": "Automating cryptocurrency conversion.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rkooo567/ip-finance.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rkooo567/ip-finance/issues"
+  },
+  "homepage": "https://github.com/rkooo567/ip-finance#readme"
+}
