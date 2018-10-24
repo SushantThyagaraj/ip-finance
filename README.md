@@ -1,3 +1,3 @@
 # IP Finance 
 
-Automating cryptocurrency conversion.
+Automating cryptocurrency conversion
