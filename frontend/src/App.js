@@ -9,7 +9,6 @@ import Header from './components/header';
 
 
 
-
 class App extends Component {
   render() {
     return (
@@ -23,7 +22,6 @@ class App extends Component {
           <p><strong> Note that in this preliminary outline of the website,
           <li>Initial coin represents the coin that the user wants to send</li>
           <li>Final coin represents the coin that the receiver wants </li>
-
           </strong></p>
         </main>
       </div>
