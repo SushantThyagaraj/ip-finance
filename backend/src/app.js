@@ -32,7 +32,7 @@ app.use((req, res, next) => {
 // MongoDB setup
 // Connection URL
 const url = 'mongodb://ipfa-user:interoperability-2018@ds163013.mlab.com:63013/ipfa_finance_db';
-mongoose.connect('mongodb://ipfa-user:interoperability-2018@ds163013.mlab.com:63013/ipfa_finance_db');
+mongoose.connect(url);
 console.log("MongoDB is connected");
 
 // Error handler
