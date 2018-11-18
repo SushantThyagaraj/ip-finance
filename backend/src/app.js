@@ -3,6 +3,7 @@ import path from 'path';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
 import routes from './routes';
+import mongoose from 'mongoose';
 
 const app = express();
 app.disable('x-powered-by');
@@ -27,6 +28,12 @@ app.use((req, res, next) => {
   err.status = 404;
   next(err);
 });
+
+// MongoDB setup
+// Connection URL
+const url = 'mongodb://ipfa-user:interoperability-2018@ds163013.mlab.com:63013/ipfa_finance_db';
+mongoose.connect('mongodb://ipfa-user:interoperability-2018@ds163013.mlab.com:63013/ipfa_finance_db');
+console.log("MongoDB is connected");
 
 // Error handler
 app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
