@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 const MainComponent = {
   backgroundColor: "lightblue",
-  textAlign: 'center'
+  margin: "1px",
+  padding: "20px"
 }
 
 export default MainComponent;

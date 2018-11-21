@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
-import Button from './components/button';
 import Info from './components/info';
 import Form from './components/form';
 import MainComponent from './components/styles';
-import Input from './components/input';
 import Header from './components/header';
-
+import CardPage from './components/cardpage'
 
 
 class App extends Component {
   render() {
     return (
-      <div style = {MainComponent}>
+      <div style={MainComponent}>
         <main>
           <Header />
           <Form />
+          <CardPage />
           <p> Please send your {Info.coin} to {Info.ourPublicAddress}. </p>
           <p> Your {Info.ogCoinValue} {Info.coin} will be transformed to approximately {Info.otherCoinValue} {Info.otherCoin} </p>
 
