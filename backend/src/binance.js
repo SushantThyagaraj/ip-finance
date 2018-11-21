@@ -1,5 +1,4 @@
 // Binance as an exchange, does not look viable as of right now so IGNORE
-
 const binance = require('node-binance-api')().options({
 APIKEY: 'Lhmyb5sLBqjJrpjRWSc1H2hQQ5vSuwINRGiOiadpMcU7858nnLKo9S0i9XboVHxp',
 APISECRET: 'Acw4KZVfu4uZLuo3jgeobJfceFIs5zWMPWOcGAsExUfEWYMMop07ASKHZET8hQ5m',
