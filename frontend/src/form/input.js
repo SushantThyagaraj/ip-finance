@@ -23,6 +23,7 @@ class Input extends React.Component {
   handleChange(e) {
     this.setState({ value: e.target.value });
   }
+  
 
   render() {
     return (

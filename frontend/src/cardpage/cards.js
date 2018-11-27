@@ -6,7 +6,7 @@ import { Card, CardImg, CardText, CardBody,
 class Cards extends Component{
   render() {
     return (
-      <div>
+      <div style={{flex: 6}}>
         <Card>
           <CardImg top width="100%" src={this.props.imgsrc} alt="Card image cap" />
           <CardBody>

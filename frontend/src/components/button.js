@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 
-class newButton extends Component {
+class Buttons extends Component {
   handleClick(e) {
   }
   render() {
@@ -13,6 +13,6 @@ class newButton extends Component {
   }
 }
 
-export default newButton;
+export default Buttons;
 
 

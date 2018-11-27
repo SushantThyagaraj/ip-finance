@@ -35,10 +35,13 @@ export default class Header extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="../misc/devflow.pdf">Documentation</NavLink>
+                <NavLink href="#">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/rkooo567/ip-finance">GitHub</NavLink>
+                <NavLink href="#">Transactions</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="#">Charities</NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
@@ -46,14 +49,10 @@ export default class Header extends React.Component {
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                    Option 1
+                    <NavLink href="https://github.com/rkooo567/ip-finance">GitHub</NavLink>
                   </DropdownItem>
                   <DropdownItem>
-                    Option 2
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
+                    <NavLink href="https://docs.google.com/document/d/12W414aCpnBQ5NyyYDCWU7U95M1xHImnhQNaII2_Pjdg/edit?usp=sharing">Documentation</NavLink>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
