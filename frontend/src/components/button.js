@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap';
 
-class Button extends Component {
+class newButton extends Component {
   handleClick(e) {
   }
   render() {
     return (
-      <button onClick={this.handleClick}>
+      <Button onClick={this.handleClick}>
         {this.props.message}
-      </button>
+      </Button>
     );
   }
 }
 
-export default Button;
+export default newButton;
+
+
