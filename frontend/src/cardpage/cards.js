@@ -13,7 +13,7 @@ class Cards extends Component{
             <CardTitle> {this.props.title} </CardTitle>
             <CardSubtitle> {this.props.subtitle} </CardSubtitle>
             <CardText> {this.props.text} </CardText>
-            <Button>Button</Button>
+            <Button>Donate</Button>
           </CardBody>
         </Card>
       </div>
