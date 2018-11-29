@@ -1,7 +1,11 @@
 import React from 'react';
 import { Jumbotron} from 'reactstrap';
+import { Image, Row, Col, } from 'react-bootstrap';
 
-const HomePage = (props) => {
+
+class HomePage extends React.Component {
+    render () {
+
     return (
         <div>
             <Jumbotron>
@@ -14,5 +18,6 @@ const HomePage = (props) => {
         </div>
     );
 };
+}
 
 export default HomePage;
