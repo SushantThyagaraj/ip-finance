@@ -17,7 +17,7 @@ class App extends Component {
         <Header />
         <Switch style={MainComponent}>
           <Route path="/" component={HomePage} exact/>
-          <Route path="/charities" component={CardPage} />
+          <Route path="/enterprises" component={CardPage} />
           <Route path="/transactions" component={TransactionPage} />
           <Route path="/exchange" component={InfoInput} />
           <Route component={Error} />

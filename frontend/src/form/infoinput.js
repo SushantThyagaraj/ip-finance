@@ -98,8 +98,6 @@ class InfoInput extends React.Component {
                     </Row>
                     <Row>
                         <Col><Button onClick={this.handleClick}> Submit </Button></Col>
-                            <Col><a href="https://auth.shapeshift.io/oauth/authorize?response_type=code&scope=users:read&client_id=your_client_id&redirect_uri=http://localhost:3000/exchange"><img src="https://auth.shapeshift.io/public/images/sign-in-with-shapeshift-blue@1x.png" /></a>
-</Col>
                     </Row>
                     
 
