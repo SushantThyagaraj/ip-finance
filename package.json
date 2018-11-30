@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rkooo567/ip-finance/issues"
   },
-  "homepage": "https://github.com/rkooo567/ip-finance#readme"
+  "homepage": "https://github.com/rkooo567/ip-finance#readme",
+  "dependencies": {
+    "civic-sip-api": "^1.0.2"
+  }
 }
