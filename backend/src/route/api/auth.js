@@ -3,8 +3,8 @@ const passport = require('passport');
 const router = require('express').Router();
 const auth = require('../auth_config');
 
-import '../../model/user';
-const Users = mongoose.model('Users');
+// mongodb import
+let Users = require('../../model/user');
 
 /**
  * Create a user with email & password.
@@ -49,7 +49,6 @@ router.post('/', auth.optional, (req, res, next) => {
   }
 
   const finalUser = new Users(user);
-
   finalUser.setPassword(user.password);
 
   return finalUser.save()

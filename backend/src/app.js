@@ -11,8 +11,6 @@ import cors from 'cors';
 import passport from 'passport';
 import LocalStrategy from 'passport-local';
 
-// models
-import './model/user';
 
 //Configure mongoose's promise to global promise
 mongoose.promise = global.Promise;
@@ -46,7 +44,7 @@ mongoose.set('debug', true);
 console.log("MongoDB is connected");
 
 // Passport authentication config
-const Users = mongoose.model('Users');
+let Users = require('./model/user');
 
 passport.use(new LocalStrategy({
   usernameField: 'user[email]',
