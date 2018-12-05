@@ -7,10 +7,10 @@ const auth = require('../auth_config');
 let Users = require('../../model/user');
 
 /**
- * Create a user with email & password.
+ * Create an user with email & password.
  * 
  * POST 
- * path: /users/
+ * path: /users
  * params: None
  * body: {
  *   "user": {
