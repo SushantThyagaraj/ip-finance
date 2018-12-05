@@ -1,8 +1,16 @@
 import React from 'react';
 import { Table } from 'reactstrap';
+import { Redirect } from 'react-router-dom';
+
 
 
 export default class Example extends React.Component {
+    componentDidMount() {
+        if (localStorage.getItem('token')) {
+            return (<Redirect to="/" />)
+        }
+    }
+
     render() {
         let now = new Date()
 

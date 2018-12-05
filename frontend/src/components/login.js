@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import { Container, Row, Col } from 'reactstrap';
-
+import { Redirect } from 'react-router-dom';
 
 export default class Login extends Component {
   constructor(props) {
@@ -11,6 +11,12 @@ export default class Login extends Component {
       email: "",
       password: ""
     };
+  }
+
+  componentDidMount() {
+    if (localStorage.getItem('token')) {
+      return (<Redirect to="/" />)
+    }
   }
 
   validateForm() {
@@ -43,7 +49,7 @@ export default class Login extends Component {
         return res.json()
       })
       .then(data => {
-        console.log(data.email)
+        localStorage.setItem('token', data.token)
       })
       .catch(err => console.error('Caught error: ', err))
   }
@@ -81,7 +87,6 @@ export default class Login extends Component {
           </Button>
               </Col>
             <Col>
-
               <p className="lead" >
                 <a class="btn btn-outline-success" href="/login">
                   <img alt class="civic-icon btn-magic-login-icon btn-magic-login-icon-svg" src="https://tokenmarket.net/tokenmarket-static/perma-asset/civic-icon-green.ca7fd772a24afe86727a14ff1390b265.png" />
