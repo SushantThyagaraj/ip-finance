@@ -7,10 +7,12 @@ const auth = require('../auth_config');
 let Users = require('../../model/user');
 
 /**
- * Create an user with email & password.
- * 
- * POST 
- * path: /users
+
+ * Create a user with email & password.
+ *
+ * POST
+
+ * path: /users/
  * params: None
  * body: {
  *   "user": {
@@ -18,7 +20,7 @@ let Users = require('../../model/user');
  *     "password": String
  *   }
  * }
- * 
+ *
  * Response:
  *  user object with authorization token
  *  {
@@ -57,7 +59,7 @@ router.post('/', auth.optional, (req, res, next) => {
 
 /**
  * Verify login and return the access token
- * 
+ *
  * POST
  * path: /users/login
  * params: None
@@ -67,14 +69,14 @@ router.post('/', auth.optional, (req, res, next) => {
  *     "password": String
  *   }
  * }
- * 
+ *
  * Response:
  *  user object with access token
  *  {
  *    "user": {
  *       "_id": "5b0f38772c46910f16a058c5",
  *       "email": "erdeljac.antonio@gmail.com",
- *       // this is an access token to verify user's logged in. 
+ *       // this is an access token to verify user's logged in.
  *          Add it to authorization header whenever you sends request that requires user authentictiaon
  *       "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImVyZGVsamFjLmFudG9uaW9AZ21haWwuY29tIiwiaWQiOiI1YjBmMzg3NzJjNDY5MTBmMTZhMDU4YzUiLCJleHAiOjE1MzI5MDgzMTgsImlhdCI6MTUyNzcyNDMxOH0.5UnA2mpS-_puPwwxZEb4VxRGFHX6qJ_Fn3pytgGaJT0"
  *    }
@@ -116,12 +118,12 @@ router.post('/login', auth.optional, (req, res, next) => {
 
 /**
  * Verify login
- * 
+ *
  * GET
  * path: /users/current
  * params: None
  * header: {"Authorization": String(access_token)}
- * 
+ *
  * Response:
  *  user object with access token
  *  {

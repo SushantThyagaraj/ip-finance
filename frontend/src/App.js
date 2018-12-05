@@ -6,9 +6,9 @@ import Header from './components/header';
 import CardPage from './cardpage/cardpage';
 import TransactionPage from './components/transactionpage';
 import HomePage from './components/homepage';
+import Login from './components/login';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Error from "./components/error";
-import Login from "./components/login";
 
 class App extends Component {
   render() {
