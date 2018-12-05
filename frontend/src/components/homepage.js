@@ -32,10 +32,10 @@ class HomePage extends React.Component {
                 <p className="lead">
                     <button onClick={() => {this.clickHandler()}}>Learn More</button>
                   <p className="lead" >
-                      <span class = "btn btn-outline-success">
+                      <a class ="btn btn-outline-success" href="/login">
                         <img alt class = "civic-icon btn-magic-login-icon btn-magic-login-icon-svg" src = "https://tokenmarket.net/tokenmarket-static/perma-asset/civic-icon-green.ca7fd772a24afe86727a14ff1390b265.png"/>
                         <span>&nbsp;&nbsp;&nbsp;Log in with Civic</span>
-                      </span>
+                      </a>
                   </p>
                 </p>
             </Jumbotron>
