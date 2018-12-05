@@ -1,6 +1,7 @@
 import { Router } from 'express';
 
 const router = Router();
+const server_info = require('./server_info');
 
 /**
  * If user is logged in, passport middleware creates req.user object. So you can verify if user is logged in by simply
@@ -30,5 +31,8 @@ router.get('/', (req, res) => {
  *   POST users/current
  */
 router.use('/users', require('./api/auth'));
+
+router.use('/coinbase', require('./api/coinbase'));
+
 
 export default router;

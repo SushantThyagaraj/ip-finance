@@ -8,7 +8,12 @@ const UsersSchema = new Schema({
   email: String,
   hash: String,
   salt: String,
-  type: String
+  info: {
+    name: String,
+    public_address: String,
+    coinbase_access_token: String,
+  },
+  type: String // either org or user
 });
 
 UsersSchema.methods.setPassword = function(password) {

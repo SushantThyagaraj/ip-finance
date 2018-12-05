@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 // MongoDB setup
 // Connection URL
-const url = 'mongodb://ipfa-user:interoperability-2018@ds163013.mlab.com:63013/ipfa_finance_db';
+const url = process.env.MONGO;
 mongoose.connect(
   url, 
   {
