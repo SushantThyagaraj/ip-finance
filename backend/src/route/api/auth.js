@@ -149,3 +149,5 @@ router.get('/current', auth.required, (req, res, next) => {
 });
 
 module.exports = router;
+
+router.get('/civic')
