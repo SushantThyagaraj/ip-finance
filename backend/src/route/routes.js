@@ -32,7 +32,7 @@ router.get('/', (req, res) => {
  */
 router.use('/users', require('./api/auth'));
 
-router.use('/coinbase', require('./api/coinbase'));
+//router.use('/coinbase', require('./api/coinbase'));
 
 
 export default router;

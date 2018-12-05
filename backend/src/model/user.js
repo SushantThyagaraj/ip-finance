@@ -13,8 +13,7 @@ const UsersSchema = new Schema({
     public_address: String,
     coinbase_access_token: String,
   },
-  type: String // either org or user
-});
+}); // not use normalization for quick dev
 
 UsersSchema.methods.setPassword = function(password) {
   // set the salt
