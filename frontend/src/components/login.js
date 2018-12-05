@@ -1,57 +1,85 @@
-<link rel="stylesheet" href="https://hosted-sip.civic.com/css/civic-modal.min.css">
+import React, { Component } from "react";
+import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import { Container, Row, Col } from 'reactstrap';
 
-<script src="https://hosted-sip.civic.com/js/civic.sip.min.js"></script>
 
-var civicSip = new civic.sip({appId: 'oUFrklQiS' });
+export default class Login extends Component {
+  constructor(props) {
+    super(props);
 
-<button id="signupButton" class="civic-button-a medium" type="button">
-        <span>Log in with Civic</span>
-</button>
+    this.state = {
+      email: "",
+      password: ""
+    };
+  }
 
- var button = document.querySelector('#signupButton');
-  button.addEventListener('click', function () {
-    civicSip.signup({ style: 'popup', scopeRequest: civicSip.ScopeRequests.BASIC_SIGNUP });
-  });
+  validateForm() {
+    return this.state.email.length > 0 && this.state.password.length > 0;
+  }
 
-  // Listen for data
-  civicSip.on('auth-code-received', function (event) {
-    /*
-        event:
-        {
-            event: "scoperequest:auth-code-received",
-            response: "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NksifQ.eyJqdGkiOiI2Y2EwNTEzMi0wYTJmLTQwZjItYTg2Yi03NTkwYmRjYzBmZmUiLCJpYXQiOjE0OTQyMjUxMTkuMTk4LCJleHAiOjE0OTQyMjUyOTkuMTk4LCJpc3MiOiJjaXZpYy1zaXAtaG9zdGVkLXNlcnZpY2UiLCJhdWQiOiJodHRwczovL3BoNHg1ODA4MTUuZXhlY3V0ZS1hcGkudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZGV2Iiwic3ViIjoiY2l2aWMtc2lwLWhvc3RlZC1zZXJ2aWNlIiwiZGF0YSI6eyJjb2RlVG9rZW4iOiJjY2E3NTE1Ni0wNTY2LTRhNjUtYWZkMi1iOTQzNjc1NDY5NGIifX0.gUGzPPI2Av43t1kVg35diCm4VF9RUCF5d4hfQhcSLFvKC69RamVDYHxPvofyyoTlwZZaX5QI7ATiEMcJOjXRYQ",
-            type: "code"
-        }
-    */
+  handleChange = event => {
+    this.setState({
+      [event.target.id]: event.target.value
+    });
+  }
 
-    // encoded JWT Token is sent to the server
-    var jwtToken = event.response;
-
-    // Your function to pass JWT token to your server
-    sendAuthCode(jwtToken);
-  });
-
-  civicSip.on('user-cancelled', function (event) {
-    /*
-        event:
-        {
-          event: "scoperequest:user-cancelled"
-        }
-    */
-   });
-
-  civicSip.on('read', function (event) {
-    /*
-        event:
-        {
-          event: "scoperequest:read"
-        }
-    */
-  });
-
-   // Error events.
-   civicSip.on('civic-sip-error', function (error) {
-      // handle error display if necessary.
-      console.log('   Error type = ' + error.type);
-    console.log('   Error message = ' + error.message);
- });
+  handleSubmit = event => {
+    event.preventDefault();
+    const user_info = {
+      email: this.state.email,
+      password: this.state.password
+    }
+    fetch(
+      "http://localhost:8080/users/login",
+      {
+        method: 'POST',
+        body: JSON.stringify(user_info),
+        headers: {
+          "Content-Type": "application/json"
+        },
+        credentials: "same-origin"
+      })
+      .then(res => {
+        return res.json()
+      })
+      .then(data => {
+        console.log(data.email)
+      })
+      .catch(err => console.error('Caught error: ', err))
+  }
+  render() {
+    return (
+      <div className="Login">
+      <Container>
+        <form onSubmit={this.handleSubmit}>
+          <FormGroup controlId="email" bsSize="large">
+            <ControlLabel>Email</ControlLabel>
+            <FormControl
+              autoFocus
+              type="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+            />
+          </FormGroup>
+          <FormGroup controlId="password" bsSize="large">
+            <ControlLabel>Password</ControlLabel>
+            <FormControl
+              value={this.state.password}
+              onChange={this.handleChange}
+              type="password"
+            />
+          </FormGroup>
+          <Button
+            block
+            bsSize="large"
+            disabled={!this.validateForm()}
+            type="submit"
+          >
+            Login
+          </Button>
+        </form>
+        </Container>
+      </div>
+    );
+  }
+}

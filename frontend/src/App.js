@@ -6,9 +6,9 @@ import Header from './components/header';
 import CardPage from './cardpage/cardpage';
 import TransactionPage from './components/transactionpage';
 import HomePage from './components/homepage';
-import Civic from './components/login';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Error from "./components/error";
+import Login from "./components/login";
 
 class App extends Component {
   render() {
@@ -21,7 +21,7 @@ class App extends Component {
           <Route path="/enterprises" component={CardPage} />
           <Route path="/transactions" component={TransactionPage} />
           <Route path="/exchange" component={InfoInput} />
-          <Route path="/civic" component={Civic} />
+          <Route path="/login" component={Login} />
           <Route component={Error} />
         </Switch>
       </div>
@@ -31,3 +31,4 @@ class App extends Component {
 }
 
 export default App;
+
