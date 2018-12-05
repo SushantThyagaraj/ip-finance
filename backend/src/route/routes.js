@@ -32,6 +32,8 @@ router.get('/', (req, res) => {
  */
 router.use('/users', require('./api/auth'));
 
+router.use('/orgs', require('./api/org'));
+
 //router.use('/coinbase', require('./api/coinbase'));
 
 

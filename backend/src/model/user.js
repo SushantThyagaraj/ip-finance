@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
+const Orgs = require('./orgs');
+
 
 const { Schema } = mongoose;
 
@@ -13,6 +15,7 @@ const UsersSchema = new Schema({
     public_address: String,
     coinbase_access_token: String,
   },
+  orgs: [{type: Schema.Types.ObjectId, ref: 'Orgs'}]
 }); // not use normalization for quick dev
 
 UsersSchema.methods.setPassword = function(password) {
@@ -24,6 +27,10 @@ UsersSchema.methods.setPassword = function(password) {
 UsersSchema.methods.validatePassword = function(password) {
   const hash = crypto.pbkdf2Sync(password, this.salt, 10000, 512, 'sha512').toString('hex');
   return this.hash === hash;
+};
+
+UsersSchema.methods.setCoinbaseAccessToken = function(access_token) {
+  this.info.coinbase_access_token = access_token;
 };
 
 UsersSchema.methods.generateJWT = function() {
