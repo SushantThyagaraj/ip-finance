@@ -29,7 +29,7 @@ class InfoInput extends React.Component {
 
     handleClick(e) {
         e.preventDefault();
-        alert(this.state.formValues.initialcoin + " is being sent from " + this.state.formValues.initialaddress + " to " + this.state.formValues.receiversaddress + " in " + this.state.formValues.finalcoin);
+        alert(this.state.formValues.amount + " of " + this.state.formValues.initialcoin + " is being sent as" + this.state.formValues.finalcoin);
 
     }
 
@@ -55,21 +55,6 @@ class InfoInput extends React.Component {
                             </FormGroup>
                         </Col>
                         <Col>
-                        <FormGroup
-                            controlId="formBasicText">
-                            <ControlLabel>Your Public Address</ControlLabel>
-                            <FormControl
-                                name="initialaddress"
-                                type="text"
-                                value={this.state.formValues["initialaddress"]}
-                                placeholder="Enter Address"
-                                onChange={this.handleChange} />
-                            <FormControl.Feedback />
-                        </FormGroup>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col>
                             <FormGroup
                                 controlId="formBasicText">
                                 <ControlLabel>Final Coin</ControlLabel>
@@ -82,14 +67,16 @@ class InfoInput extends React.Component {
                                 <FormControl.Feedback />
                             </FormGroup>
                         </Col>
+                    </Row>
+                    <Row>
                         <Col>
                             <FormGroup
                                 controlId="formBasicText">
-                                <ControlLabel>Receiver's Address</ControlLabel>
+                                <ControlLabel>Amount</ControlLabel>
                                 <FormControl
-                                    name="receiversaddress"
+                                    name="amount"
                                     type="text"
-                                    value={this.state.formValues["receiversaddress"]}
+                                    value={this.state.formValues["amount"]}
                                     placeholder="Enter Address"
                                     onChange={this.handleChange} />
                                 <FormControl.Feedback />

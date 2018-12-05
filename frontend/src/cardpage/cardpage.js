@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import Cards from './cards';
 import { Container, Row, Col } from 'reactstrap';
+import { Redirect } from 'react-router-dom';
+
 
 class CardPage extends Component {
+    componentDidMount() {
+        if (!localStorage.getItem('token')) {
+            return (<Redirect to="/login" />)
+        }
+    }
+
     render() {
         return (
         <Container>

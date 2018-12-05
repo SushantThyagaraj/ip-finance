@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button } from 'reactstrap';
 import { NavLink } from 'reactstrap';
-
+import ModalButton from './modal';
 
 class Cards extends Component{
   render() {
@@ -14,7 +14,7 @@ class Cards extends Component{
             <CardTitle> {this.props.title} </CardTitle>
             <CardSubtitle> {this.props.subtitle} </CardSubtitle>
             <CardText> {this.props.text} </CardText>
-            <Button href="/exchange">Invest</Button>
+            <ModalButton />
           </CardBody>
         </Card>
       </div>
