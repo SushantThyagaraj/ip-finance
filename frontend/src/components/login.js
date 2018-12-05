@@ -69,14 +69,29 @@ export default class Login extends Component {
               type="password"
             />
           </FormGroup>
-          <Button
-            block
-            bsSize="large"
-            disabled={!this.validateForm()}
-            type="submit"
-          >
-            Login
+          <Row>
+            <Col>
+            <Button
+              block
+              bsSize="large"
+              disabled={!this.validateForm()}
+              type="submit"
+            >
+              Login
           </Button>
+              </Col>
+            <Col>
+
+              <p className="lead" >
+                <a class="btn btn-outline-success" href="/login">
+                  <img alt class="civic-icon btn-magic-login-icon btn-magic-login-icon-svg" src="https://tokenmarket.net/tokenmarket-static/perma-asset/civic-icon-green.ca7fd772a24afe86727a14ff1390b265.png" />
+                  <span>&nbsp;&nbsp;&nbsp;Log in with Civic</span>
+                </a>
+              </p>
+              </Col>
+
+          </Row>
+         
         </form>
         </Container>
       </div>
