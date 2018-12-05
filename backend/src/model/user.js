@@ -8,6 +8,7 @@ const UsersSchema = new Schema({
   email: String,
   hash: String,
   salt: String,
+  type: String
 });
 
 UsersSchema.methods.setPassword = function(password) {
