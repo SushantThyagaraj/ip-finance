@@ -2,6 +2,7 @@ let Orgs = require('../../model/orgs');
 const router = require('express').Router();
 const auth = require('../auth_config');
 let Users = require('../../model/user');
+let Orgs = require('../../model/orgs');
 
 /**
  * GET
@@ -9,8 +10,14 @@ let Users = require('../../model/user');
  * path /orgs/get
  * 
  * Get all the organizations in the database
- * 
  */
+router.get('/get', auth.optional, (req, res, next) => {
+    Orgs.find().all()
+    .then(orgs => {
+        res.json(orgs);
+    })
+    .catch(err => console.error(err));
+});
 
 /** 
  * POST
