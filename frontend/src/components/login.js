@@ -3,7 +3,7 @@
 <script src="https://hosted-sip.civic.com/js/civic.sip.min.js"></script>
 
 var civicSip = new civic.sip({appId: 'oUFrklQiS' });
-    
+
 <button id="signupButton" class="civic-button-a medium" type="button">
         <span>Log in with Civic</span>
 </button>
