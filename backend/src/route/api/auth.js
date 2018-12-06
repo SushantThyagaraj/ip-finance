@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const router = require('express').Router();
 const auth = require('../auth_config');
+const civic = require('../civic_function');
 
 // mongodb import
 let Users = require('../../model/user');
@@ -148,6 +149,19 @@ router.get('/current', auth.required, (req, res, next) => {
     });
 });
 
-module.exports = router;
+router.get('/verify', function(req, res) {
 
-router.get('/civic')
+  var token = req.param('token');
+
+civicClient.exchangeCode(token)
+    .then(function(userData) {
+        var userData = JSON.stringify(userData);
+          res.setHeader('Content-Type', 'application/json');
+          res.send(userData);
+    }).catch(function(error) {
+          res.status(500).send('Invalid token');
+  });
+
+});
+
+module.exports = router;
