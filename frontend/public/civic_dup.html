@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <title>Civic SIP</title>
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+  <script src="https://hosted-sip.civic.com/js/civic.sip.min.js"></script>
+  <link rel="stylesheet" href="https://hosted-sip.civic.com/css/civic-modal.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet" />
+  <script src="./civic.js"></script>
+\  <style>*{box-sizing:border-box}body,html{height:100%}body{margin:0;padding:0;font-size:16px;line-height:1.5;font-weight:400;font-family:"Source Sans Pro",sans-serif}.civic-onboarding{color:#fff;background:#3ab03e;background:-moz-linear-gradient(-45deg,#3ab03e 0,#439ce6 100%);background:-webkit-linear-gradient(-45deg,#3ab03e 0,#439ce6 100%);background:linear-gradient(135deg,#3ab03e 0,#439ce6 100%)}.civic-centered-column{width:100%;text-align:center;display:block;display:-webkit-box;display:-moz-box;display:box;display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-justify-content:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:start;-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical;-webkit-box-direction:normal;-moz-box-direction:normal;box-direction:normal;-webkit-flex-direction:column;-moz-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-ms-flex-align:center;-moz-flex-align:center;align-items:center}.civic-flex-column{-webkit-box-flex:1;-ms-flex:1 1 0px;flex:1 1 0}.civic-switch{padding:28px 24px}@media only screen and (max-width:767px){.civic-switch{padding:20px}}a{color:#fff;border-bottom:1px dotted rgba(255,255,255,.7);text-decoration:none;transition:all .25s ease}a:hover{border-bottom:1px solid #fff}h3{width:100%;font-size:20px;font-weight:400;margin:0 0 28px}h3.smaller{font-size:18px;margin-bottom:0}@media only screen and (max-width:400px){h3{font-size:18px;line-height:1.25}}@media only screen and (max-height:500px){h3{font-size:16px;line-height:1.2;margin-bottom:24px}}#civic-qr-content{max-width:450px}#civic-qr-content img{display:block;width:100%;height:auto}@media only screen and (max-height:620px){#civic-qr-content img{max-width:66vh}}#civic-auth-reminder{font-size:18px;margin-bottom:60px}.civic-button-container{padding:60px 0}.civic-button{border:2px solid #fff;border-radius:100px;color:#fff;font-size:16px;display:inline-block;background:0 0;padding:0 32px;height:50px;line-height:46px;width:100%;min-width:200px;max-width:300px;transition:all .25s ease;user-select:none;text-transform:uppercase;cursor:pointer}.civic-button:hover{background-color:#fff;color:#3fa692}.civic-test-mode{width:100%;background:#faebaa;color:#525252;text-align:center;font-weight:400;padding:10px 20px;line-height:1.2}.civic-test-mode span{font-weight:600}@-moz-document url-prefix(){.civic-test-mode{margin-top:-1px}}.civic-help-links{width:100%;padding:0}#civic-main .civic-help-links{padding:10px 0}@media only screen and (max-height:500px){#civic-main .civic-help-links{padding-bottom:0}}#civic-loader{padding:0}.civic-loader{height:64px;width:64px;margin-bottom:60px;background-color:transparent}.civic-circular{animation:rotate 2s linear infinite;transform-origin:center center;width:100%;height:100%;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto}.civic-path{stroke-dasharray:1,200;stroke-dashoffset:0;animation:dash 1.5s ease-in-out infinite;stroke-linecap:square}@keyframes rotate{100%{transform:rotate(360deg)}}@keyframes dash{0%{stroke-dasharray:1,200;stroke-dashoffset:0}50%{stroke-dasharray:144,200;stroke-dashoffset:-24px}100%{stroke-dasharray:144,200;stroke-dashoffset:-172px}}
+  </style>
+  <script src="jquery.js"></script>
+  <script>
+    $(function(){
+      $("#document").load("civic_helper.html");
+    });
+  </script>
+
+  <body class="civic-hit-the-lights civic-no-scroll">
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    <div class="civic-lights-out"></div>
+
+    <div class="civic-modal civic-qrcode civic-show">
+      <div class="civic-window">
+        <div class="civic-content" id="civic-iframe-zone">
+          <iframe id="civic-sr-frame" src="https://hosted-sip.civic.com/scopeRequest/prod/index.html" border="0" frameborder="0" allowtransparency="true" scrolling="no" style="height: 640px; width: 100%; background-color: transparent; background-position: initial initial; background-repeat: initial initial;">
+            <div id="document"></div>
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    This HTML file is a template.
+    If you open it directly in the browser, you will see an empty page.
+
+    You can add webfonts, meta tags, or analytics to this file.
+    The build step will place the bundled scripts into the <body> tag.
+
+    To begin the development, run `npm start` or `yarn start`.
+    To create a production bundle, use `npm run build` or `yarn build`.
+  -->
+
+
+</body>
+</html>

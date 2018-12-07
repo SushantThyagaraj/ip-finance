@@ -22,6 +22,7 @@ class App extends Component {
           <Route path="/transactions" component={TransactionPage} />
           <Route path="/exchange" component={InfoInput} />
           <Route path="/login" component={Login} />
+          <Route path="/civic" render={() => {window.location.href="civic.html"}} />
           <Route component={Error} />
         </Switch>
       </div>
@@ -31,4 +32,3 @@ class App extends Component {
 }
 
 export default App;
-

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Civic sign in</title>
+  <meta name=viewport content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no minimal-ui"/>
+
+  <script src="https://hosted-sip.civic.com/js/civic.sip.min.js"></script>
+
+  <link rel="stylesheet" href="https://hosted-sip.civic.com/css/civic-modal.css">
+  <script src="https://hosted-sip.civic.com/js/civic.sip.min.js"></script>
+
+</head>
+
+<body>
+  <script>
+      var civicSip = new civic.sip({ appId: 'rJ3fVI9rz' });
+      button.addEventListener('load', function () {
+          civicSip.signup({ style: 'popup', scopeRequest: civicSip.ScopeRequests.BASIC_SIGNUP });
+      });
+  </script>
+
+</body>
+</html>

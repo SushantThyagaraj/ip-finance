@@ -1,12 +1,12 @@
+import React from 'react';
+import { civic } from 'civic-sip-api';
 var civicSip = new civic.sip({ appId: 'mPFggvxtj' });
-
-var button = document.querySelector('#signupButton');
-  button.addEventListener('click', function () {
+export default class CivicButton extends React.Component {
+  handleClick(e) {
     civicSip.signup({ style: 'popup', scopeRequest: civicSip.ScopeRequests.BASIC_SIGNUP });
-  });
-
-  // Listen for data
-  civicSip.on('auth-code-received', function (event) {
+}
+// Listen for data
+civicSip.on('auth-code-received', function(event) {
     /*
         event:
         {
@@ -20,30 +20,41 @@ var button = document.querySelector('#signupButton');
     var jwtToken = event.response;
 
     // Your function to pass JWT token to your server
-    sendAuthCode(jwtToken);
-  });
+    localStorage.setItem('token', jwtToken);
+});
 
-  civicSip.on('user-cancelled', function (event) {
+civicSip.on('user-cancelled', function(event) {
     /*
         event:
         {
-          event: "scoperequest:user-cancelled"
+        event: "scoperequest:user-cancelled"
         }
     */
-   });
+});
 
-  civicSip.on('read', function (event) {
+civicSip.on('read', function(event) {
     /*
         event:
         {
-          event: "scoperequest:read"
+        event: "scoperequest:read"
         }
     */
-  });
+});
 
-   // Error events.
-   civicSip.on('civic-sip-error', function (error) {
-      // handle error display if necessary.
-      console.log('   Error type = ' + error.type);
-      console.log('   Error message = ' + error.message);
-   });
+// Error events.
+civicSip.on('civic-sip-error', function(error) {
+    // handle error display if necessary.
+    console.log('   Error type = ' + error.type);
+    console.log('   Error message = ' + error.message);
+});
+
+render() {
+    return(
+        <div>
+        <button id="signupButton" class="civic-button-a medium" type="button" onClick={this.handleClick}>
+            <span>Log in with Civic</span>
+        </button>
+        </div>
+    );
+}
+}

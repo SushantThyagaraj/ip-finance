@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://hosted-sip.civic.com/css/civic-modal.min.css">
+<script src="https://hosted-sip.civic.com/js/civic.sip.min.js"></script>
+<script type="text/javascript">
+function PopUp(){
+$(document).ready(function(){
+setTimeout(function(){
+PopUp();
+},1000); // 5000 to load it after 5 seconds from page load
+});
+}
+</script>
+<script language="JavaScript" type="text/javascript">
+function CloseAndRefresh()
+{
+opener.location.reload(true);
+self.close();
+}
+</script>
+</head>
+<body>
+
+<script id="popup">
+var civicSip = new civic.sip({ appId: 'mPFggvxtj' });
+//var button = document.querySelector('#civicLogin');
+civicSip.signup({ style: 'popup', scopeRequest: civicSip.ScopeRequests.BASIC_SIGNUP });
+civicSip.on('auth-code-received', function (event) {
+
+
+  // encoded JWT Token is sent to the server
+  var jwtToken = event.response;
+  window.location = "./civic_success.html";
+
+  // Your function to pass JWT token to your server
+  $.ajax({
+    url: '/login',
+    dataType: 'json',
+    type: 'post',
+    contentType: 'application/json',
+    data: JSON.stringify({ "authCode": jwtToken })
+  });
+});
+
+civicSip.on('user-cancelled', function (event) {
+
+  window.location = "./";
+
+});
+
+civicSip.on('read', function (event) {
+  /*
+  event:
+  {
+  event: "scoperequest:read"
+}
+*/
+});
+
+// Error events.
+civicSip.on('civic-sip-error', function (error) {
+  // handle error display if necessary.
+  console.log('   Error type = ' + error.type);
+  console.log('   Error message = ' + error.message);
+  window.location = "./";
+});
+</script>
+
+
+
+<!--
+This HTML file is a template.
+If you open it directly in the browser, you will see an empty page.
+
+You can add webfonts, meta tags, or analytics to this file.
+The build step will place the bundled scripts into the <body> tag.
+
+To begin the development, run `npm start` or `yarn start`.
+To create a production bundle, use `npm run build` or `yarn build`.
+-->
+
+
+</body>
+</html>

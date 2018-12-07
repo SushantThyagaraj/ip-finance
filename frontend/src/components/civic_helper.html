@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Civic SIP</title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet" />
+    <style>*{box-sizing:border-box}body,html{height:100%}body{margin:0;padding:0;font-size:16px;line-height:1.5;font-weight:400;font-family:"Source Sans Pro",sans-serif}.civic-onboarding{color:#fff;background:#3ab03e;background:-moz-linear-gradient(-45deg,#3ab03e 0,#439ce6 100%);background:-webkit-linear-gradient(-45deg,#3ab03e 0,#439ce6 100%);background:linear-gradient(135deg,#3ab03e 0,#439ce6 100%)}.civic-centered-column{width:100%;text-align:center;display:block;display:-webkit-box;display:-moz-box;display:box;display:-webkit-flex;display:-moz-flex;display:-ms-flexbox;display:flex;-webkit-justify-content:center;-moz-justify-content:center;-ms-justify-content:center;-o-justify-content:center;justify-content:center;-ms-flex-pack:start;-webkit-box-orient:vertical;-moz-box-orient:vertical;box-orient:vertical;-webkit-box-direction:normal;-moz-box-direction:normal;box-direction:normal;-webkit-flex-direction:column;-moz-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-ms-flex-align:center;-moz-flex-align:center;align-items:center}.civic-flex-column{-webkit-box-flex:1;-ms-flex:1 1 0px;flex:1 1 0}.civic-switch{padding:28px 24px}@media only screen and (max-width:767px){.civic-switch{padding:20px}}a{color:#fff;border-bottom:1px dotted rgba(255,255,255,.7);text-decoration:none;transition:all .25s ease}a:hover{border-bottom:1px solid #fff}h3{width:100%;font-size:20px;font-weight:400;margin:0 0 28px}h3.smaller{font-size:18px;margin-bottom:0}@media only screen and (max-width:400px){h3{font-size:18px;line-height:1.25}}@media only screen and (max-height:500px){h3{font-size:16px;line-height:1.2;margin-bottom:24px}}#civic-qr-content{max-width:450px}#civic-qr-content img{display:block;width:100%;height:auto}@media only screen and (max-height:620px){#civic-qr-content img{max-width:66vh}}#civic-auth-reminder{font-size:18px;margin-bottom:60px}.civic-button-container{padding:60px 0}.civic-button{border:2px solid #fff;border-radius:100px;color:#fff;font-size:16px;display:inline-block;background:0 0;padding:0 32px;height:50px;line-height:46px;width:100%;min-width:200px;max-width:300px;transition:all .25s ease;user-select:none;text-transform:uppercase;cursor:pointer}.civic-button:hover{background-color:#fff;color:#3fa692}.civic-test-mode{width:100%;background:#faebaa;color:#525252;text-align:center;font-weight:400;padding:10px 20px;line-height:1.2}.civic-test-mode span{font-weight:600}@-moz-document url-prefix(){.civic-test-mode{margin-top:-1px}}.civic-help-links{width:100%;padding:0}#civic-main .civic-help-links{padding:10px 0}@media only screen and (max-height:500px){#civic-main .civic-help-links{padding-bottom:0}}#civic-loader{padding:0}.civic-loader{height:64px;width:64px;margin-bottom:60px;background-color:transparent}.civic-circular{animation:rotate 2s linear infinite;transform-origin:center center;width:100%;height:100%;position:absolute;top:0;bottom:0;left:0;right:0;margin:auto}.civic-path{stroke-dasharray:1,200;stroke-dashoffset:0;animation:dash 1.5s ease-in-out infinite;stroke-linecap:square}@keyframes rotate{100%{transform:rotate(360deg)}}@keyframes dash{0%{stroke-dasharray:1,200;stroke-dashoffset:0}50%{stroke-dasharray:144,200;stroke-dashoffset:-24px}100%{stroke-dasharray:144,200;stroke-dashoffset:-172px}}</style>
+</head>
+<body class="civic-onboarding civic-centered-column">
+
+    <div id="civic-test-mode-container" class="civic-test-mode" style="display:none;">
+        <span>Test Mode:</span> Approval of this integration with Civic is pending.
+    </div>
+
+    <div id="civic-loader" class="civic-centered-column civic-flex-column civic-switch">
+        <div id="civic-auth-reminder" class="civic-description" style="display:none;">
+            <span id="civic-auth-reminder-text">Please check the Civic App on your phone.<br>You might need to authorize this request.</span>
+        </div>
+        <svg class="civic-loader" width="64px" height="64px" version="1.1" viewbox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="keyhole" transform="translate(4.000000, 4.000000)">
+                <path d="M31.6750055,30.4909742 C34.1659012,29.271799 35.8812589,26.711394 35.8812589,23.750025 C35.8812589,19.607775 32.525102,16.250025 28.3848173,16.250025 C24.2445327,16.250025 20.8883758,19.607775 20.8883758,23.750025 C20.8883758,26.711493 22.6038482,29.2719702 25.094879,30.4910965 L25.094879,39.75 L31.6750055,39.75 L31.6750055,30.4909742 Z"
+                    fill="#FFFFFF"></path>
+            </g>
+            <g class="civic-circular" stroke="none" stroke-width="0" fill="none" fill-rule="evenodd">
+                <circle class="civic-path" cx="32" cy="32" r="28" stroke="#FFFFFF" stroke-width="8" fill="none" miterlimit="10" />
+            </g>
+        </svg>
+        <div class="civic-help-links">
+            <a id="civic-cancel" href="">Cancel</a>
+        </div>
+    </div>
+
+    <div id="civic-main" class="civic-centered-column civic-flex-column civic-top civic-switch" style="display:none;">
+        <h3>Use the <a class="app-download" href="https://www.civic.com/app" target="_blank">Civic app</a> to scan the QR code</h3>
+        <div id="civic-qr-content">
+            <img id="civic-qrcode-img" class="civic-qrcode-img" src="">
+        </div>
+        <div class="civic-help-links">
+            <a id="civic-cancel" href="">Cancel</a>
+        </div>
+    </div>
+
+    <div id="civic-retry-box" class="civic-centered-column civic-flex-column civic-top civic-switch" style="display:none;">
+        <h3 class="smaller">It looks like you need more time.
+            <br> Please click retry to get a new QR code.</h3>
+        <div class="civic-button-container two-up">
+            <button type="button" id="civic-retry" class="civic-button medium outline">Retry</button>
+        </div>
+        <div class="civic-help-links">
+            <a id="civic-cancel" href="">Cancel</a>
+        </div>
+    </div>
+
+    <div id="civic-mobile-detected" class="civic-centered-column civic-flex-column civic-top civic-switch" style="display:none;">
+        <h3 class="smaller">It looks like you are using a mobile device.
+            <br> Please make use of the Civic App to continue.</h3>
+        <div class="civic-button-container two-up">
+            <button type="button" id="civic-proceed" class="civic-button medium outline">Open Civic App</button>
+        </div>
+        <div class="civic-help-links">
+            <a id="civic-cancel" href="">Cancel</a>
+        </div>
+    </div>
+
+    <script>!function a(b,c,d){function e(g,h){if(!c[g]){if(!b[g]){var i="function"==typeof require&&require;if(!h&&i)return i(g,!0);if(f)return f(g,!0);var j=new Error("Cannot find module '"+g+"'");throw j.code="MODULE_NOT_FOUND",j}var k=c[g]={exports:{}};b[g][0].call(k.exports,function(a){var c=b[g][1][a];return e(c||a)},k,k.exports,a,b,c,d)}return c[g].exports}for(var f="function"==typeof require&&require,g=0;g<d.length;g++)e(d[g]);return e}({1:[function(a,b,c){"use strict";function d(){var a=window.navigator.userAgent,b=a.indexOf("MSIE ");return b>=0?parseInt(a.substring(b+5,a.indexOf(".",b))):0}function e(a,b,c,d){return"function"==typeof c&&(d=c,c={}),f(a,b,c,d)}function f(a,b,c,d){function e(){"post"===a?(g.setRequestHeader&&g.setRequestHeader("Content-type","application/x-www-form-urlencoded"),g.send(i)):g.send()}var f=function(){var a=window.XMLHttpRequest,b=window.XDomainRequest;return a&&"withCredentials"in new a?a:b||void 0}(),g=new f,h=w;b&&(h+="/"+b);var i=y(c);"get"===a&&(h+="?"+i),g.open(a,h),g.timeout=3e4,g.ontimeout=function(){d(new Error("api-timeout"))},g.onerror=function(){d(new Error("api-error"))},g.onprogress=function(){},g.onload=function(){var a;try{a=JSON.parse(this.responseText)}catch(a){return d(new Error("api-error","There was a problem parsing the API response with: "+this.responseText))}a&&a.error?d(new Error("api-error",a.error)):d(null,a)},setTimeout(e,0)}function g(a){u=window.setInterval(function(){e("get",a,{},function(a,b){if(a)console.log("HTTP.polling response: error = "+JSON.stringify(a)),i(),console.log("Error: ",a.message,"error");else if(202!=b.statusCode)if(window.clearInterval(u),window.clearTimeout(t),u=null,t=null,200===b.statusCode){if(i(),"user-cancelled"===b.action)parent.postMessage({event:"scoperequest:user-cancelled",data:{}},"*");else if("data-received"===b.action||"data-dispatched"===b.action)parent.postMessage({event:"scoperequest:"+b.action,type:b.type,response:b.authResponse},"*");else if("mobile-upgrade"===b.action){parent.postMessage({event:"scoperequest:mobile-upgrade",data:{}},"*");var c="Please update your Civic mobile app to continue.<br>Once updated, click retry to get a new QR code.";m(c)}}else if(401===b.statusCode){i(),console.log("result: "+JSON.stringify(b));var c="It seems there was an issue processing your request.<br>Please press retry to close this window and start from the beginning.";m(c,l)}else i(),console.log("result: "+JSON.stringify(b));else if(202===b.statusCode&&"read"===b.action&&"processing"!==v){parent.postMessage({event:"scoperequest:read"},"*"),v="processing";var d=document.getElementById("civic-main"),e=document.getElementById("civic-loader"),f=document.getElementById("civic-auth-reminder");j(e,"flex"),j(f),d.style.display="none"}})},1500)}function h(a){x=a||x,t=window.setTimeout(function(){u&&(i(),k("civic-retry-box"))},1e3*x)}function i(){window.clearInterval(u),window.clearTimeout(t),u=null,t=null}function j(a,b){var c=.01;a.style.display=b||"block",a.style.opacity=c;var d=setInterval(function(){c>=1&&clearInterval(d),a.style.opacity=c,a.style.filter="alpha(opacity="+100*c+")",c+=.1*c},25)}function k(a,b){var c=document.getElementById("civic-test-mode-container");c&&c.style&&(c.style.display=b?"block":"none");for(var d=document.getElementsByClassName("civic-switch"),e=0;e<d.length;e+=1)d[e].id!==a?d[e].style.display="none":j(document.getElementById(a),"flex")}function l(a){i(),window.removeEventListener("message",r,!1),parent.postMessage({event:"scoperequest:user-cancelled",data:{}},"*")}function m(a,b){k("civic-retry-box");var c=document.getElementById("civic-retry-box"),d=c.getElementsByTagName("h3");if(b){var e=document.getElementById("civic-retry"),f=e.cloneNode(!0);e.parentNode.replaceChild(f,e);document.querySelector("#civic-retry").addEventListener("click",function(){k("civic-loader"),b()},!1)}d[0].innerHTML=a}function n(a,b){return a.indexOf("?")<0?a+"?uuid="+b:a+"&uuid="+b}function o(a){parent.postMessage({event:"qrcode:fetch",data:a},"*")}function p(a){a.mobile=!0,parent.postMessage({event:"mobile:fetchScopeRequest",data:a},"*")}function q(a){return a.constructor.toString().match(/function (.*)\(/)[1]}function r(a){var b=a.data,c=function(){return p(b.data)},d=function(){return o(b.data)};switch(b.event){case"mobile:error":var e="It seems there was an issue processing your request.<br>Please press retry so we can do this again.";return void m(e,c);case"mobile:response":var f=encodeURIComponent(b.responseData.scopeRequestString),j=encodeURIComponent(n(b.responseData.parentUrl,b.responseData.uuid)),r={channel:"mobile_web",feature:"mobileBranching",stage:"scopeRequest",data:{$scoperequest:f,$redirectURL:j}};return document.getElementById("civic-proceed").addEventListener("click",function(a){parent.postMessage({event:"mobile:branchLink",data:{branchLinkData:r,qrCodeData:b.responseData}},"*")},!1),void k("civic-mobile-detected",b.responseData.isTest);case"qrCode:error":var e="It seems there was an issue processing your request.<br>Please press retry so we can do this again.";return void m(e,d);case"qrCode:response":var s=b.qrCodeResponseData.imageUri;return document.getElementById("civic-qrcode-img").src=s,k("civic-main",b.qrCodeResponseData.isTest),g(b.qrCodeResponseData.uuid),void h(b.qrCodeResponseData.timeout)}var t;try{if("Object"===q(b)&&!b.appId)return!0;t=JSON.parse(b)}catch(a){console.error("Error parsing event data:",b);var e="It seems there was an issue processing your request.<br>Please press retry the process again.";return m(e,l)}var u=t.isMobile;w=t.api;var v={appId:t.appId};if(t.attributes&&(v.attributes=t.attributes),t.verificationLevel&&(v.verificationLevel=t.verificationLevel),u){var x=t.uuid;x?(k("civic-loader"),g(x),h()):p(v)}else{document.querySelector("#civic-retry").addEventListener("click",function(a){i(),k("civic-loader"),o(v)},!1),o(v)}}var s=11;(function(){var a=d();return!(a&&a<s)})()||(window.location="http://outdatedbrowser.com/en");var t,u,v,w,x=180,y=function(a){var b=[];for(var c in a)if(a.hasOwnProperty(c))if(Array.isArray(a[c]))for(var d=0;d<a[c].length;d++)b.push(encodeURIComponent(c+"["+d+"]")+"="+encodeURIComponent(a[c][d]));else a[c]&&b.push(encodeURIComponent(c)+"="+encodeURIComponent(a[c]));return b.join("&")};window.onload=function(){window.addEventListener("message",r,!1);for(var a=document.querySelectorAll("#civic-cancel"),b=0;b<a.length;b++)a[b].addEventListener("click",l,!1);parent.postMessage({event:"hostedscoperequest:loaded"},"*")}},{}]},{},[1]);</script>
+</body>
+
+</html>
